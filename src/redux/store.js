@@ -22,10 +22,10 @@ const reducer = (state  = initalState, action) => {
         case ADD_TODO:
             return {...state, todos: [...state.todos, action.payload]};
         case REMOVE_TODO:
-            return {...state, todos: state.todos.filter(todo => todo.id !== action.payload)};
+            return {...state, todos: state.todos.filter(todo => todo._id !== action.payload)};
         case COMPLETE_TODO:
             return {...state, todos: state.todos.map(todo => {
-                if (todo.id === action.payload) {
+                if (todo._id === action.payload) {
                     todo.completed = !todo.completed
                     return todo
                 }
@@ -33,7 +33,7 @@ const reducer = (state  = initalState, action) => {
             })};
         case TAG_TODO:
             return {...state, todos: state.todos.map(todo => {
-                if (todo.id === action.payload) {
+                if (todo._id === action.payload) {
                     todo.important = !todo.important
                     return todo
                 }

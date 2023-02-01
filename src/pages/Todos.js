@@ -22,7 +22,6 @@ function Todos() {
       title: title,
       completed: isCompleted,
       important: false,
-      id: Date.now(),
     };
 
     dispatch(addTodoAsync(todo));
