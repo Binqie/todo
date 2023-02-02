@@ -23,7 +23,7 @@ function Todos() {
       completed: isCompleted,
       important: false,
     };
-
+    setTitle('')
     dispatch(addTodoAsync(todo));
   };
 
@@ -49,6 +49,7 @@ function Todos() {
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
             onChange={handleTitleChange}
+            value={title}
           />
           <button
             onClick={() => addTodo()}

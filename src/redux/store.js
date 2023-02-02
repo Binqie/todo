@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 
 const initalState = {
     todos: [],
-    sidebarOpened: true,
+    sidebarOpened: false,
 }
 
 const FETCH_TODOS = "FETCH_TODOS";

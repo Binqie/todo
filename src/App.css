@@ -8,8 +8,8 @@
   display: block;
   width: 300px;
   height: 100vh;
-  background-color: #112D4E;
-  color: white;
+  background-color: #171B2D;
+  color: #ADB3CC;
   padding-top: 50px;
 }
 
@@ -43,7 +43,7 @@ button {
 }
 
 .todos-list {
-  text-align: left;
+  text-align: center;
 }
 
 .todos {
@@ -63,6 +63,7 @@ button {
 .sidebar {
   display: none;
   padding: 20px;
+  padding-right: 0;
 }
 
 .sidebar.show {
@@ -71,7 +72,6 @@ button {
 
 .sidebar-title {
   text-align: left;
-  border-bottom: 1px solid #000;
 }
 
 .sidebar-body {
@@ -83,4 +83,43 @@ button {
   text-decoration: none;
   color: rgb(201, 201, 201);
   text-align: left;
+  padding-left: 5px;
+}
+
+.sidebar-body .list-group a.active {
+  color: #171B2D;
+  background-color: #DBE2EF;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 668px) {
+  .App-side {
+    position: absolute;
+    z-index: 100;
+  }
+  .App-side.show {
+    width: 100%;
+  }
+  .App-body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .sidebar-title {
+    text-align: center;
+  }
+  .sidebar-body .list-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  a.active {
+    border-radius: 10px;
+    padding: 0 5px;
+  }
 }
